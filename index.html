@@ -1,0 +1,153 @@
+<!--Jaqueline V.-->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bora Beber</title>
+  <!-- aqui puxo o estilo (cores, fontes e afins) -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+   <!-- TOPO DO SITE: onde fica o nome da loja, a busca (decorativa) e o carrinho fake -->
+  <header class="header">
+    <div class="container header-wrap">
+      <a class="brand" href="#">
+        <span class="brand-icon" aria-hidden="true">🍺</span>
+        <strong>Bora Beber</strong>
+      </a>
+
+      <!-- caixinha de busca (não funciona, é só enfeite) -->
+      <label class="searchbar">
+        <input type="search" placeholder="Buscar... (ex: IPA, vinho)">
+      </label>
+
+      <!-- botão do carrinho (não funciona, é só enfeite) -->
+      <button class="btn cart-btn" aria-disabled="true">
+        🛒 <span class="cart-count">0</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- CHAMADA PRINCIPAL  parte de destaque com frase bonita e uma área colorida -->
+  <section class="hero">
+    <div class="container hero-wrap">
+      <div class="hero-text">
+       <span class="pill">Bora Beber 🍻</span>
+<h1>A sua bebida favorita em poucos cliques</h1>
+<p class="pill">Entrega rápida e gelada!!</p>
+      </div>
+            <div class="hero-art" aria-hidden="true">
+        <img src="https://cocobongo618452214.wordpress.com/wp-content/uploads/2018/03/licores-1024x683.jpg"
+             alt="Drinks no bar"
+             style="width:100%;height:100%;object-fit:cover;border-radius:inherit;">
+      </div>
+   </div>
+  </section>
+
+  <!-- CORPO DO SITE
+       lado esquerdo = categorias
+       lado direito = os produtos (cards fixos) -->
+  <main class="container main">
+    <!-- CATEGORIAS (fixas, não filtram nada) -->
+    <aside class="sidebar">
+      <h2 class="side-title">Categorias</h2>
+      <div class="chips">
+        <span class="chip active">Todas</span>
+        <span class="chip">Cervejas</span>
+        <span class="chip">Vinhos</span>
+        <span class="chip">Destilados</span>
+        <span class="chip">Sem Álcool</span>
+        <span class="chip">Energéticos</span>
+      </div>
+    </aside>
+
+    <!-- LISTA DE PRODUTOS (cards prontos, dá pra copiar/colar e trocar infos) -->
+    <section class="catalogo">
+      <div class="toolbar">
+        <div class="pill">Escolha sua bebida e bora curtir 🍻</div>
+      </div>
+
+      <div class="cards">
+        <!-- PRODUTO 1 -->
+        <article class="card">
+          <div class="media">
+            <img src="https://images.tcdn.com.br/img/img_prod/1042637/cerveja_baden_baden_american_ipa_campos_do_jordao_600ml_413_1_8169e81e5531e9cb41294d55f60882ca.png" alt="Cerveja IPA 600ml" style="width:100%;height:100%;object-fit:cover">
+          </div>
+          <div class="body">
+            <h3>Cerveja IPA 600ml</h3>
+            <div class="price">R$ 19,90</div>
+            <div class="actions">
+              <button class="btn" aria-disabled="true">Detalhes</button>
+              <button class="btn primary" aria-disabled="true">Adicionar</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- PRODUTO 2 -->
+        <article class="card">
+          <div class="media">
+            <img src="https://www.davo.com.br/ccstore/v1/images/?source=/file/v2782849161472242675/products/prod_7898367983790.imagem1.jpg&height=940&width=940" alt="Cerveja Pilsen 350ml" style="width:100%;height:100%;object-fit:cover">
+          </div>
+          <div class="body">
+            <h3>Cerveja Pilsen 350ml</h3>
+            <div class="price">R$ 6,90</div>
+            <div class="actions">
+              <button class="btn" aria-disabled="true">Detalhes</button>
+              <button class="btn primary" aria-disabled="true">Adicionar</button>
+ </div>
+          </div>
+        </article>
+
+         <!-- PRODUTO 3 -->
+        <article class="card" style="max-width:280px">
+          <div class="media">
+            <img src="https://images.tcdn.com.br/img/img_prod/923397/vinho_tinto_seco_cabernet_sauvignon_reserva_familiar_750ml_299_1_0ef12b39144d91f005d5c1cc81067aa5.jpg"
+                 alt="Vinho Tinto Reserva"
+                 style="width:100%;height:100%;object-fit:cover">
+          </div>
+          <div class="body">
+            <h3>Vinho Tinto Reserva</h3>
+            <div class="price">R$ 59,90</div>
+            <div class="actions">
+              <button class="btn" aria-disabled="true">Detalhes</button>
+              <button class="btn primary" aria-disabled="true">Adicionar</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- PRODUTO 4 -->
+        <article class="card" style="max-width:280px">
+          <div class="media">
+            <img src="https://prezunic.vtexassets.com/arquivos/ids/210040-800-auto?v=638568369933470000&width=800&height=auto&aspect=true"
+                 alt="Campari 1L"
+                 style="width:100%;height:100%;object-fit:cover">
+          </div>
+          <div class="body">
+            <h3>Campari 1L</h3>
+            <div class="price">R$ 79,90</div>
+            <div class="actions">
+              <button class="btn" aria-disabled="true">Detalhes</button>
+              <button class="btn primary" aria-disabled="true">Adicionar</button>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+        <!-- pode repetir o modelo acima e trocar nome, preço, imagem -->
+      </div>
+    </section>
+  </main>
+
+  <!-- RODAPÉ
+       parte final do site, só pra deixar um fechamento bonitinho -->
+  <footer class="footer">
+  <div class="container foot">
+    <span>© 2025 Bora Beber</span>
+    <div class="pill">Versão 🤯</div> <!--Surtando c-->
+  </div>
+</footer>
+</body>
+</html>

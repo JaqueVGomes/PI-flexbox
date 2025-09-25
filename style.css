@@ -1,0 +1,130 @@
+:root{
+  --bg:#0f172a;       /* fundo do site (escuro pq combina com bar) */
+  --panel:#0b1220;    /* caixas/painéis */
+  --ink:#e5e7eb;      /* cor principal do texto */
+  --muted:#9aa6b2;    /* texto de apoio (mais clarinho) */
+  --brand:#f59e0b;    /* cor de destaque (âmbar cerveja) -> posso trocar depois */
+  --line:rgba(255,255,255,.10); /* linha leve pra contorno */
+  --radius:14px;      /* cantos arredondados padrão */
+  --gap:20px;         /* espaçamentos entre coisas */
+}
+
+/* coisas básicas pra tudo ficar alinhado */
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  background:linear-gradient(180deg,#0b1020,#0b1224 30%,#0b1220); /* degrade bonitinho */
+  color:var(--ink);
+  font:15px/1.55 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Helvetica,Arial;
+}
+img{max-width:100%;display:block} /* imagem nunca passa do container */
+a{color:inherit;text-decoration:none}
+
+.container{max-width:1100px;margin:0 auto;padding:0 20px} /* limite da largura */
+.pill{
+  /* os arredondados (botão)*/
+  display:inline-flex;align-items:center;gap:8px;
+  background:rgba(255,255,255,.06);border:1px solid var(--line);
+  padding:6px 12px;border-radius:999px;font-size:12px;color:var(--muted)
+}
+.btn{
+  /* botão padrão  */
+  display:inline-flex;align-items:center;justify-content:center;
+  padding:10px 14px;border-radius:12px;border:1px solid var(--line);
+  background:rgba(255,255,255,.04);cursor:pointer
+}
+.btn.primary{
+  /* botão de ação principal = brilho */
+  background:linear-gradient(135deg,var(--brand),#ef4444);
+  border-color:transparent;color:#0b1220;font-weight:800
+}
+.btn.ghost{background:transparent}
+
+/* topo fixo bonitinho */
+.header{
+  position:sticky;top:0;
+  background:rgba(15,23,42,.68);backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--line);z-index:10
+}
+.header-wrap{display:flex;align-items:center;justify-content:space-between;gap:var(--gap);padding:12px 0}
+.brand{display:flex;align-items:center;gap:10px;font-weight:900}
+.brand-icon{font-size:20px}
+.searchbar{
+  /* busca (por enquanto é só enfeite) */
+  display:flex;align-items:center;gap:8px;
+  background:rgba(255,255,255,.06);border:1px solid var(--line);
+  padding:6px 10px;border-radius:12px
+}
+.searchbar input{
+  background:transparent;border:0;outline:0;color:var(--ink);min-width:200px
+}
+.cart-btn{position:relative}
+.cart-count{
+  /* bolinha do carrinho */
+  position:absolute;top:-8px;right:-8px;min-width:20px;height:20px;border-radius:999px;
+  background:linear-gradient(135deg,var(--brand),#ef4444);color:#0b1220;font-weight:900;font-size:12px;
+  display:flex;align-items:center;justify-content:center;border:2px solid #111827
+}
+
+/* HERO (parte de destaque) */
+.hero{padding:48px 0}
+.hero-wrap{display:flex;align-items:center;gap:32px}
+.hero-text{flex:1}
+/* aqui eu a foto do hero fica cortada certinha */
+.hero-art{
+  flex:1;min-height:260px;border-radius:var(--radius);
+  overflow:hidden; /* importantíssimo pra imagem respeitar o limite */
+  border:1px solid var(--line);
+  background:
+    radial-gradient(80% 60% at 20% 20%, rgba(245,158,11,.22), transparent 60%),
+    radial-gradient(80% 60% at 80% 80%, rgba(239,68,68,.18), transparent 60%),
+    var(--panel);
+}
+.hero-art img{
+  width:100%;height:100%;object-fit:cover; /* foto cobre tudo sem distorcer */
+}
+
+/* layout principal: barra lateral + produtos */
+.main{display:flex;gap:24px;align-items:flex-start}
+.sidebar{
+  position:sticky;top:78px; /* cola a barra lateral enquanto rola */
+  flex:0 0 260px;border:1px solid var(--line);
+  background:var(--panel);border-radius:var(--radius);padding:16px
+}
+.side-title{font-weight:800;margin-bottom:12px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{
+  padding:8px 10px;border-radius:10px;border:1px solid var(--line);
+  color:var(--muted);cursor:default /* é só visual, então não precisa mãozinha */
+}
+.chip.active{background:rgba(255,255,255,.08);color:var(--ink)}
+
+.catalogo{flex:1}
+.toolbar{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:12px}
+
+/* grade de produtos */
+.cards{display:flex;flex-wrap:wrap;gap:var(--gap)}
+.card{
+  /* cada card tem um limite pra ninguém ficar gigante */
+  display:flex;flex-direction:column;
+  flex:1 1 260px;min-width:220px;max-width:280px;
+  border:1px solid var(--line);background:rgba(255,255,255,.03);
+  border-radius:var(--radius);overflow:hidden
+}
+.card .media{
+  /* quadrado da imagem do produto */
+  aspect-ratio:1/1;
+  background:linear-gradient(135deg,rgba(245,158,11,.18),rgba(239,68,68,.15));
+  display:flex;align-items:center;justify-content:center
+}
+.card .media img{
+  /* imagem sempre encaixa certinho dentro do quadrado */
+  width:100%;height:100%;object-fit:cover;
+}
+.card .body{display:flex;flex-direction:column;gap:6px;padding:14px}
+.card .spacer{flex:1}
+.card .actions{display:flex;gap:10px;margin-top:8px}
+.price{font-weight:800}
+
+
